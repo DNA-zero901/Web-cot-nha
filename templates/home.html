@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Web cá "độ" {% endblock %}</title>
+    
+    <!-- Đây là cú pháp đặc biệt của Flask để gọi file CSS -->
+    <link rel="stylesheet" href="/static/css/home.css">
+    <script src="/static/js/home.js" defer></script>
+    
+</head>
+<body>
+    {% block navbar %}
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">Web cá "độ"</a>
+        </div> 
+        <ul class="menu">
+            <a href="/">Trang chủ</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Liên hệ</a>
+        </ul>
+    </nav>
+    {% endblock %}
+    {% block content %}
+    <section class="content">
+        <h1>Chào mừng {{ name }} đến với web Cá "độ"!</h1>
+        <p>Vui lòng chọn các mục sau </p>
+        <div>
+            <button class="button" type="button" name="baibac" id="m1" value="Bài Bạc" onclick="location.href='/baibac'"> Bài Bạc </button>
+            <br>
+            <button class="button" type="button" name="thahoa" id="m1" value="Vòng xoay tha hóa" onclick="location.href='/thahoa'"> Vòng xoay tha hóa </button>
+            <br>
+            <button class="button" type="button" name="taixiu" id="m1" value="Tài Xỉu" onclick="location.href='/taixiu'"> Tài Xỉu </button>
+        </div>
+    </section>
+    {% endblock %}
+    <div class="triple-ring">
+        <div class="load1"></div>
+        <div class="load2"></div>
+        <div class="load3"></div>
+    </div>
+</body>
+</html>
